@@ -24,4 +24,16 @@ public class B extends A{
             semaphore.release(PERMITS);
         }
     }
+
+    @Override
+    public void riskyIncrement() {
+        try {
+            semaphore.acquire(PERMITS);
+            count++;
+            System.out.println("RISKY: Count incremented from A.");
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        super.riskyIncrement();
+    }
 }

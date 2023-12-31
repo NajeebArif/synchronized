@@ -5,7 +5,12 @@ import narif.java.books.poc.reentrancy.B;
 public class Main {
     public static void main(String[] args) {
 //        testReentrancy();
+        testNonReentrancy();
+    }
+
+    private static void testNonReentrancy() {
         narif.java.books.poc.reentrancy.nonreentrant.B b = new narif.java.books.poc.reentrancy.nonreentrant.B();
+        //b.riskyIncrement(); // this will result in deadlock.
         b.increment();
     }
 

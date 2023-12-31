@@ -20,4 +20,14 @@ public class A {
             semaphore.release(PERMITS);
         }
     }
+
+    public void riskyIncrement() {
+        try {
+            semaphore.acquire(PERMITS);
+            count++;
+            System.out.println("RISKY: Count incremented from A.");
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }
