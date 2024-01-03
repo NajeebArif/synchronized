@@ -1,4 +1,4 @@
-package narif.java.books.poc;
+package narif.java.books.poc.reentrancy;
 
 import narif.java.books.poc.reentrancy.B;
 
